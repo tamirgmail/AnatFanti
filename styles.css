@@ -557,7 +557,7 @@ body[dir="rtl"] .hero-media {
 .statement-band {
   background: linear-gradient(135deg, #10203a, #004ea8 58%, #009d9b);
   color: var(--paper);
-  padding: clamp(1.4rem, 3vw, 2.4rem) clamp(1rem, 5vw, 5rem);
+  padding: clamp(1rem, 2vw, 1.6rem) clamp(1rem, 5vw, 5rem);
 }
 
 .template-grid {
@@ -616,7 +616,7 @@ body[dir="rtl"] .hero-media {
 }
 
 .section {
-  padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 5rem);
+  padding: clamp(1.8rem, 4vw, 3.6rem) clamp(1rem, 5vw, 5rem);
 }
 
 .expertise-section {
@@ -711,7 +711,7 @@ body[dir="rtl"] .expertise-card::after {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .metrics {
@@ -755,7 +755,7 @@ body[dir="rtl"] .expertise-card::after {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 8px;
-  min-height: 10rem;
+  min-height: 8.5rem;
   padding: 0.95rem;
 }
 
