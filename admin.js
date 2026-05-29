@@ -6,7 +6,7 @@ const credentials = {
 
 const adminDefaultContent = {
   email: "anat_fanti@yahoo.com",
-  heroImage: "Media/IMG_0008-Edit-web-transparent.png",
+  heroImage: "Media/refined_transparent.png",
   theme: "scholar",
   en: {
     name: "Anat Fanti",
@@ -75,7 +75,7 @@ let editorTab = "pages";
 let selectedMediaIndex = null;
 let selectedTalkIndex = null;
 
-const legacyHeroImages = ["Media/anat-fanti-hero-transparent.png", "Media/IMG_0008-Edit-web.jpg"];
+const legacyHeroImages = ["Media/anat-fanti-hero-transparent.png", "Media/IMG_0008-Edit-web.jpg", "Media/IMG_0008-Edit-web-transparent.png"];
 
 function loadAdminContent() {
   const saved = localStorage.getItem(adminStorageKey);

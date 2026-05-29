@@ -1,6 +1,6 @@
 const defaultContent = {
   email: "anat_fanti@yahoo.com",
-  heroImage: "Media/IMG_0008-Edit-web-transparent.png",
+  heroImage: "Media/refined_transparent.png",
   theme: "scholar",
   en: {
     name: "Anat Fanti",
@@ -334,7 +334,8 @@ let adminLang = "en";
 
 const legacyHeroImages = [
   "Media/anat-fanti-hero-transparent.png",
-  "Media/IMG_0008-Edit-web.jpg"
+  "Media/IMG_0008-Edit-web.jpg",
+  "Media/IMG_0008-Edit-web-transparent.png"
 ];
 
 function loadContent() {
