@@ -149,44 +149,60 @@ body[dir="rtl"] .header-actions {
 
 .brand-symbol {
   align-items: center;
-  background: conic-gradient(from 20deg, #0067d8, #27c8df, #00a99d, #f7fbf8, #0067d8);
-  border-radius: 50%;
   display: inline-flex;
   height: 2.45rem;
   justify-content: center;
-  position: relative;
   width: 2.45rem;
 }
 
-.brand-symbol::before {
-  background: var(--white);
-  border-radius: 50%;
-  content: "";
-  height: 1.35rem;
-  position: absolute;
-  width: 1.35rem;
-}
-
-.brand-symbol::after {
-  background: #f04b37;
-  border-radius: 50%;
-  content: "";
-  height: 0.48rem;
-  position: absolute;
-  right: 0.5rem;
-  top: 0.55rem;
-  width: 0.48rem;
-}
-
-.brand-symbol span {
-  border: 3px solid #13223a;
-  border-left-color: transparent;
-  border-radius: 50%;
+.brand-symbol svg {
   display: block;
-  height: 1.7rem;
-  position: relative;
-  width: 1.7rem;
-  z-index: 1;
+  height: 100%;
+  overflow: visible;
+  width: 100%;
+}
+
+.logo-arc,
+.logo-ring {
+  fill: none;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 32px 32px;
+}
+
+.logo-arc {
+  stroke-width: 5.5;
+}
+
+.logo-arc-blue {
+  stroke: #0067d8;
+  stroke-dasharray: 74 78;
+}
+
+.logo-arc-teal {
+  stroke: #00a99d;
+  stroke-dasharray: 38 114;
+  stroke-dashoffset: -84;
+}
+
+.logo-arc-navy {
+  stroke: #13223a;
+  stroke-dasharray: 42 70;
+  stroke-dashoffset: -18;
+  stroke-width: 4.5;
+}
+
+.logo-ring {
+  stroke: #27c8df;
+  stroke-width: 4;
+}
+
+.logo-center {
+  fill: #f04b37;
+}
+
+.logo-dot {
+  fill: #f04b37;
 }
 
 .brand-copy {
@@ -213,7 +229,7 @@ body[dir="rtl"] .header-actions {
   display: inline-block;
   font-size: 1.26em;
   font-weight: 900;
-  min-width: 0.78em;
+  min-width: 0;
 }
 
 .hi-letter[data-brand-letter="i"] {
@@ -481,6 +497,10 @@ body[dir="rtl"] .language-options {
   letter-spacing: 0;
   margin: 0 0 0.9rem;
   text-transform: uppercase;
+}
+
+body:not(.editor-body) main .section-kicker {
+  display: none;
 }
 
 h1,
