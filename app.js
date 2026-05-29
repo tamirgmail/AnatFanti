@@ -576,6 +576,21 @@ document.getElementById("skipTemplate").addEventListener("click", () => {
 });
 
 document.getElementById("adminTrigger").addEventListener("click", openAdmin);
+let footerLogoClicks = 0;
+let footerLogoTimer;
+document.getElementById("footerAdminHotspot").addEventListener("click", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  footerLogoClicks += 1;
+  clearTimeout(footerLogoTimer);
+  footerLogoTimer = setTimeout(() => {
+    footerLogoClicks = 0;
+  }, 1400);
+  if (footerLogoClicks >= 5) {
+    footerLogoClicks = 0;
+    openAdmin();
+  }
+});
 window.addEventListener("hashchange", () => {
   if (window.location.hash === "#admin") openAdmin();
 });
