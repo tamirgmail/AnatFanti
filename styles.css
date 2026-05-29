@@ -272,13 +272,13 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3.2rem, 8vw, 7.4rem);
-  max-width: 11ch;
+  font-size: clamp(2.6rem, 5.8vw, 5.5rem);
+  max-width: 13ch;
 }
 
 h2 {
-  font-size: clamp(2.1rem, 4.4vw, 4.2rem);
-  max-width: 13ch;
+  font-size: clamp(1.8rem, 3.3vw, 3.1rem);
+  max-width: 15ch;
 }
 
 h3 {
@@ -296,14 +296,14 @@ h3 {
 .hero-media {
   align-self: end;
   margin: 0;
-  min-height: 560px;
-  overflow: hidden;
+  min-height: 0;
+  overflow: visible;
 }
 
 .hero-media img {
-  height: min(78vh, 820px);
-  object-fit: cover;
-  object-position: 52% 35%;
+  height: min(74vh, 760px);
+  object-fit: contain;
+  object-position: center bottom;
   width: 100%;
 }
 
@@ -311,12 +311,6 @@ h3 {
   background: var(--ink);
   color: var(--paper);
   padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 5rem);
-}
-
-.template-section {
-  background: var(--white);
-  padding-bottom: clamp(2rem, 5vw, 4rem);
-  padding-top: clamp(2rem, 5vw, 4rem);
 }
 
 .template-grid {
@@ -425,13 +419,17 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.media-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .media-card,
 .talk-card {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 8px;
-  min-height: 15rem;
-  padding: 1.2rem;
+  min-height: 10rem;
+  padding: 0.95rem;
 }
 
 .media-card {
@@ -448,12 +446,17 @@ h3 {
 
 .media-card h3,
 .talk-card h3 {
-  margin-top: 0.8rem;
+  font-family: Inter, Assistant, system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.22;
+  margin-top: 0.55rem;
 }
 
 .media-card p,
 .talk-card p {
   color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0.45rem 0;
 }
 
 .media-card a {
@@ -470,6 +473,37 @@ h3 {
   border-radius: 8px;
   margin: 1rem 0;
   width: 100%;
+}
+
+.theme-fab {
+  align-items: center;
+  background: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  bottom: 1rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  display: inline-flex;
+  height: 3rem;
+  justify-content: center;
+  position: fixed;
+  right: 1rem;
+  width: 3rem;
+  z-index: 4;
+}
+
+body[dir="rtl"] .theme-fab {
+  left: 1rem;
+  right: auto;
+}
+
+.theme-fab span {
+  background: conic-gradient(var(--coral), var(--gold), var(--sage), var(--paper), var(--coral));
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  display: block;
+  height: 1.6rem;
+  width: 1.6rem;
 }
 
 .filter-button.active {
@@ -669,11 +703,12 @@ textarea {
   }
 
   .hero-media img {
-    height: min(82vh, 680px);
+    height: auto;
+    max-height: 680px;
   }
 
   h1 {
-    max-width: 10ch;
+    max-width: 13ch;
   }
 
   .media-grid,
@@ -706,6 +741,6 @@ textarea {
   }
 
   h1 {
-    font-size: clamp(3rem, 16vw, 5.4rem);
+    font-size: clamp(2.45rem, 11vw, 4.2rem);
   }
 }

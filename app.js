@@ -173,6 +173,7 @@ const translations = {
     "nav.speaking": "Speaking",
     "nav.contact": "Contact",
     "nav.book": "Book a talk",
+    "nav.contactCta": "Contact",
     "hero.primaryCta": "Invite Anat to speak",
     "hero.secondaryCta": "Explore media",
     "work.kicker": "Focus",
@@ -204,6 +205,7 @@ const translations = {
     "nav.speaking": "הרצאות",
     "nav.contact": "יצירת קשר",
     "nav.book": "הזמנת הרצאה",
+    "nav.contactCta": "יצירת קשר",
     "hero.primaryCta": "הזמינו את ענת להרצות",
     "hero.secondaryCta": "צפו במדיה",
     "work.kicker": "מיקוד",
@@ -387,7 +389,8 @@ function renderTemplates() {
       </button>`
     )
     .join("");
-  document.getElementById("templateGrid").innerHTML = templateMarkup;
+  const inlineGrid = document.getElementById("templateGrid");
+  if (inlineGrid) inlineGrid.innerHTML = templateMarkup;
   document.getElementById("templateDialogGrid").innerHTML = templateMarkup;
 }
 

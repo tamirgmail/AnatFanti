@@ -30,7 +30,7 @@
       </nav>
       <div class="header-actions">
         <button class="flag-button" id="langToggle" type="button" aria-label="Switch to Hebrew">🇮🇱</button>
-        <a class="primary-button compact" href="#contact" data-i18n="nav.book">Book a talk</a>
+        <a class="primary-button compact" href="#contact" data-i18n="nav.contactCta">Contact</a>
       </div>
     </header>
 
@@ -51,19 +51,6 @@
         <figure class="hero-media">
           <img id="heroImage" src="Media/IMG_0008-Edit-web.jpg" alt="Portrait of Anat Fanti" />
         </figure>
-      </section>
-
-      <section class="section template-section" id="templates">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker" data-i18n="templates.kicker">Visual direction</p>
-            <h2 data-i18n="templates.title">Choose a starting mood</h2>
-          </div>
-          <button class="secondary-button" id="openTemplatePicker" type="button" data-i18n="templates.open">
-            Change template
-          </button>
-        </div>
-        <div class="template-grid" id="templateGrid" aria-label="Website color templates"></div>
       </section>
 
       <section class="statement-band" aria-label="Professional focus">
@@ -162,6 +149,10 @@
       <p><span data-field="name">Anat Fanti</span> <span id="year"></span></p>
       <button class="stealth-admin" id="adminTrigger" type="button" aria-label="Open editor"></button>
     </footer>
+
+    <button class="theme-fab" id="openTemplatePicker" type="button" aria-label="Change color template" title="Change color template">
+      <span aria-hidden="true"></span>
+    </button>
 
     <dialog class="admin-dialog" id="adminDialog" aria-labelledby="adminTitle">
       <form method="dialog" class="admin-shell">
