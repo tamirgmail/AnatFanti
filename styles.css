@@ -387,6 +387,16 @@ body[dir="rtl"] .language-options {
   color: var(--ink);
 }
 
+/* Secondary CTA sits on the dark blue hero, so its text/border must be light. */
+.hero .secondary-button {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--white);
+}
+
+.hero .secondary-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .danger-button {
   background: #fff4f1;
   border-color: #e8b7ab;
@@ -421,7 +431,7 @@ body[dir="rtl"] .language-options {
   color: var(--white);
   display: grid;
   gap: clamp(1rem, 3vw, 3rem);
-  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
+  grid-template-columns: minmax(300px, 0.92fr) minmax(0, 1fr);
   margin: 0;
   min-height: 360px;
   overflow: hidden;
@@ -561,7 +571,8 @@ h3 {
   align-self: end;
   grid-column: 1;
   grid-row: 1;
-  margin: 0;
+  /* Pull the figure flush to the bottom edge of the blue panel (cancels hero padding). */
+  margin: 0 0 calc(-1 * clamp(1.2rem, 3vw, 2.4rem));
   min-height: 0;
   overflow: visible;
   position: relative;
@@ -569,9 +580,12 @@ h3 {
 }
 
 .hero-media img {
-  height: 335px;
-  object-fit: contain;
-  object-position: center bottom;
+  display: block;
+  /* Cover + top anchor crops the figure higher (head to upper body) so the
+     hero stays compact while the portrait still reads large. */
+  height: clamp(360px, 36vw, 520px);
+  object-fit: cover;
+  object-position: center top;
   width: 100%;
 }
 
@@ -581,7 +595,7 @@ h3 {
 }
 
 body[dir="rtl"] .hero {
-  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
+  grid-template-columns: minmax(300px, 0.92fr) minmax(0, 1fr);
 }
 
 body[dir="rtl"] .hero-copy {
@@ -1195,12 +1209,14 @@ textarea {
   }
 
   .hero-media {
+    margin-bottom: 0;
     min-height: 0;
   }
 
   .hero-media img {
-    height: auto;
-    max-height: 480px;
+    height: 320px;
+    object-fit: cover;
+    object-position: center top;
   }
 
   .hero-copy,

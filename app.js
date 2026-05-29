@@ -332,14 +332,30 @@ let currentLang = localStorage.getItem("anat-fanti-language") || "en";
 let activeFilter = "all";
 let adminLang = "en";
 
+const legacyHeroImages = [
+  "Media/anat-fanti-hero-transparent.png",
+  "Media/IMG_0008-Edit-web.jpg"
+];
+
 function loadContent() {
   const saved = localStorage.getItem(storageKey);
   if (!saved) return structuredClone(defaultContent);
   try {
-    return mergeContent(structuredClone(defaultContent), JSON.parse(saved));
+    const merged = migrateContent(mergeContent(structuredClone(defaultContent), JSON.parse(saved)));
+    localStorage.setItem(storageKey, JSON.stringify(merged));
+    return merged;
   } catch {
     return structuredClone(defaultContent);
   }
+}
+
+// Returning visitors may have an outdated hero image pinned in localStorage
+// (older defaults had a baked-in background). Refresh those to the current default.
+function migrateContent(data) {
+  if (legacyHeroImages.includes(data.heroImage)) {
+    data.heroImage = defaultContent.heroImage;
+  }
+  return data;
 }
 
 function mergeContent(base, incoming) {

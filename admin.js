@@ -75,10 +75,14 @@ let editorTab = "pages";
 let selectedMediaIndex = null;
 let selectedTalkIndex = null;
 
+const legacyHeroImages = ["Media/anat-fanti-hero-transparent.png", "Media/IMG_0008-Edit-web.jpg"];
+
 function loadAdminContent() {
   const saved = localStorage.getItem(adminStorageKey);
   if (!saved) return structuredClone(adminDefaultContent);
-  return mergeAdminContent(structuredClone(adminDefaultContent), JSON.parse(saved));
+  const merged = mergeAdminContent(structuredClone(adminDefaultContent), JSON.parse(saved));
+  if (legacyHeroImages.includes(merged.heroImage)) merged.heroImage = adminDefaultContent.heroImage;
+  return merged;
 }
 
 function mergeAdminContent(base, incoming) {
