@@ -1,6 +1,6 @@
 const defaultContent = {
   email: "anat_fanti@yahoo.com",
-  heroImage: "Media/IMG_0008-Edit-web.jpg",
+  heroImage: "Media/IMG_0008-Edit-web-transparent.png",
   theme: "scholar",
   en: {
     name: "Anat Fanti",
@@ -168,11 +168,21 @@ const defaultContent = {
 
 const translations = {
   en: {
+    "brand.title": "Happiness Intelligence",
+    "brand.happinessRest": "appiness",
+    "brand.intelligenceRest": "ntelligence",
+    "brand.subtitle": "with Dr Fanti",
     "nav.work": "Work",
-    "nav.media": "Media",
+    "nav.about": "About",
+    "nav.index": "Happiness Index",
+    "nav.organizational": "Organizational Wellbeing",
+    "nav.media": "Lectures & Media",
+    "nav.lab": "Measurement Lab",
+    "nav.programs": "Programs",
     "nav.speaking": "Speaking",
     "nav.contact": "Contact",
     "nav.book": "Book a talk",
+    "nav.contactCta": "Contact",
     "hero.primaryCta": "Invite Anat to speak",
     "hero.secondaryCta": "Explore media",
     "work.kicker": "Focus",
@@ -195,15 +205,36 @@ const translations = {
     "templates.modalTitle": "Pick a first look",
     "templates.modalBody": "This can be changed later from the site. It only sets the starting palette and tone.",
     "templates.skip": "Keep current look",
+    "expertise.kicker": "Areas of expertise",
+    "expertise.title": "Research translated into action",
+    "expertise.labTitle": "Measurement Lab",
+    "expertise.labBody": "Tools, surveys, and frameworks for understanding wellbeing and progress.",
+    "expertise.mediaTitle": "Lectures & Media",
+    "expertise.mediaBody": "Clear talks, interviews, and public conversations grounded in research.",
+    "expertise.orgTitle": "Organizational Wellbeing",
+    "expertise.orgBody": "Evidence-based ideas for healthier teams, leadership, and culture.",
+    "expertise.indexTitle": "Happiness Index",
+    "expertise.indexBody": "Methods and insights for measuring happiness at personal and social levels.",
+    "feature.more": "Learn more",
     readMore: "Open link",
     unsupportedEmbed: "This provider does not expose an inline player for this link yet."
   },
   he: {
+    "brand.title": "אינטיליגמציית האושר",
+    "brand.happinessRest": "ינטיליגמציית",
+    "brand.intelligenceRest": "האושר",
+    "brand.subtitle": "עם ד״ר פנטי",
     "nav.work": "תחום פעילות",
-    "nav.media": "מדיה",
+    "nav.about": "אודות",
+    "nav.index": "מדדי אושר",
+    "nav.organizational": "רווחה ארגונית",
+    "nav.media": "הרצאות ומדיה",
+    "nav.lab": "מעבדת המדידה",
+    "nav.programs": "תוכניות",
     "nav.speaking": "הרצאות",
     "nav.contact": "יצירת קשר",
     "nav.book": "הזמנת הרצאה",
+    "nav.contactCta": "יצירת קשר",
     "hero.primaryCta": "הזמינו את ענת להרצות",
     "hero.secondaryCta": "צפו במדיה",
     "work.kicker": "מיקוד",
@@ -226,17 +257,33 @@ const translations = {
     "templates.modalTitle": "בחרו מראה ראשוני",
     "templates.modalBody": "אפשר לשנות את זה בהמשך מתוך האתר. הבחירה קובעת רק צבעוניות ואופי ראשוני.",
     "templates.skip": "להשאיר את המראה הנוכחי",
+    "expertise.kicker": "תחומי התמחות",
+    "expertise.title": "מחקר שמתורגם לפעולה",
+    "expertise.labTitle": "מעבדת המדידה",
+    "expertise.labBody": "כלים, סקרים ומסגרות להבנת רווחה נפשית והתקדמות.",
+    "expertise.mediaTitle": "הרצאות ומדיה",
+    "expertise.mediaBody": "הרצאות, ראיונות ושיחות ציבוריות ברורות ומבוססות מחקר.",
+    "expertise.orgTitle": "רווחה ארגונית",
+    "expertise.orgBody": "רעיונות מבוססי ראיות לצוותים, מנהיגות ותרבות בריאים יותר.",
+    "expertise.indexTitle": "מדדי אושר",
+    "expertise.indexBody": "שיטות ותובנות למדידת אושר ברמה אישית וחברתית.",
+    "feature.more": "למדו עוד ‹",
     readMore: "פתיחת קישור",
     unsupportedEmbed: "הספק הזה עדיין לא מאפשר נגן פנימי לקישור הזה."
   }
 };
 
+const flagSvgs = {
+  en: '<svg class="flag-svg" viewBox="0 0 24 16" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#b22234"/><g fill="#fff"><rect y="1.23" width="24" height="1.23"/><rect y="3.69" width="24" height="1.23"/><rect y="6.15" width="24" height="1.23"/><rect y="8.62" width="24" height="1.23"/><rect y="11.08" width="24" height="1.23"/><rect y="13.54" width="24" height="1.23"/></g><rect width="10.5" height="8.62" fill="#3c3b6e"/></svg>',
+  he: '<svg class="flag-svg" viewBox="0 0 24 16" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="2" width="24" height="2.2" fill="#0038b8"/><rect y="11.8" width="24" height="2.2" fill="#0038b8"/><g fill="none" stroke="#0038b8" stroke-width="0.7"><path d="M12 5.2 L14.6 9.7 L9.4 9.7 Z"/><path d="M12 10.8 L9.4 6.3 L14.6 6.3 Z"/></g></svg>'
+};
+
 const themes = [
   {
     id: "scholar",
-    title: "Calm Scholar",
-    description: "Soft academic, warm, and credible.",
-    colors: ["#1f2524", "#48675c", "#b96355", "#fbfaf6"]
+    title: "Blue Insight",
+    description: "Clean blue, teal, and red accents from the reference.",
+    colors: ["#13223a", "#0067d8", "#00a99d", "#f04b37"]
   },
   {
     id: "editorial",
@@ -285,14 +332,30 @@ let currentLang = localStorage.getItem("anat-fanti-language") || "en";
 let activeFilter = "all";
 let adminLang = "en";
 
+const legacyHeroImages = [
+  "Media/anat-fanti-hero-transparent.png",
+  "Media/IMG_0008-Edit-web.jpg"
+];
+
 function loadContent() {
   const saved = localStorage.getItem(storageKey);
   if (!saved) return structuredClone(defaultContent);
   try {
-    return mergeContent(structuredClone(defaultContent), JSON.parse(saved));
+    const merged = migrateContent(mergeContent(structuredClone(defaultContent), JSON.parse(saved)));
+    localStorage.setItem(storageKey, JSON.stringify(merged));
+    return merged;
   } catch {
     return structuredClone(defaultContent);
   }
+}
+
+// Returning visitors may have an outdated hero image pinned in localStorage
+// (older defaults had a baked-in background). Refresh those to the current default.
+function migrateContent(data) {
+  if (legacyHeroImages.includes(data.heroImage)) {
+    data.heroImage = defaultContent.heroImage;
+  }
+  return data;
 }
 
 function mergeContent(base, incoming) {
@@ -309,7 +372,7 @@ function render() {
   document.documentElement.lang = currentLang;
   document.body.dir = currentLang === "he" ? "rtl" : "ltr";
   document.body.dataset.theme = content.theme || "scholar";
-  document.title = `${data.name} | Wellbeing Researcher & Speaker`;
+  document.title = window.location.hostname.includes("staging") ? "Staging | Anat Fanti" : "Anat Fanti";
   document.querySelectorAll("[data-field]").forEach((element) => {
     const key = element.dataset.field;
     if (data[key]) element.textContent = data[key];
@@ -318,8 +381,13 @@ function render() {
     element.textContent = translations[currentLang][element.dataset.i18n] || element.textContent;
   });
   const langToggle = document.getElementById("langToggle");
-  langToggle.textContent = currentLang === "en" ? "🇺🇸" : "🇮🇱";
-  langToggle.setAttribute("aria-label", currentLang === "en" ? "English selected. Switch to Hebrew" : "Hebrew selected. Switch to English");
+  langToggle.innerHTML = flagSvgs[currentLang] || flagSvgs.en;
+  langToggle.setAttribute("aria-label", currentLang === "en" ? "English selected. Choose language" : "Hebrew selected. Choose language");
+  document.querySelector(".brand-title").classList.toggle("hebrew-brand-title", currentLang === "he");
+  document.querySelectorAll("[data-lang-choice]").forEach((button) => {
+    button.innerHTML = flagSvgs[button.dataset.langChoice] || button.innerHTML;
+    button.classList.toggle("active", button.dataset.langChoice === currentLang);
+  });
   document.getElementById("heroImage").src = content.heroImage;
   document.getElementById("emailLink").href = `mailto:${content.email}`;
   document.getElementById("emailLink").textContent = content.email;
@@ -387,7 +455,8 @@ function renderTemplates() {
       </button>`
     )
     .join("");
-  document.getElementById("templateGrid").innerHTML = templateMarkup;
+  const inlineGrid = document.getElementById("templateGrid");
+  if (inlineGrid) inlineGrid.innerHTML = templateMarkup;
   document.getElementById("templateDialogGrid").innerHTML = templateMarkup;
 }
 
@@ -500,9 +569,25 @@ function escapeAttribute(value) {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 document.getElementById("langToggle").addEventListener("click", () => {
-  currentLang = currentLang === "en" ? "he" : "en";
-  localStorage.setItem("anat-fanti-language", currentLang);
-  render();
+  const menu = document.getElementById("languageMenu");
+  const isOpen = menu.classList.toggle("open");
+  document.getElementById("langToggle").setAttribute("aria-expanded", String(isOpen));
+});
+
+document.querySelectorAll("[data-lang-choice]").forEach((button) => {
+  button.addEventListener("click", () => {
+    currentLang = button.dataset.langChoice;
+    localStorage.setItem("anat-fanti-language", currentLang);
+    document.getElementById("languageMenu").classList.remove("open");
+    document.getElementById("langToggle").setAttribute("aria-expanded", "false");
+    render();
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest("#languageMenu")) return;
+  document.getElementById("languageMenu").classList.remove("open");
+  document.getElementById("langToggle").setAttribute("aria-expanded", "false");
 });
 
 document.body.addEventListener("click", (event) => {
@@ -543,6 +628,21 @@ document.getElementById("skipTemplate").addEventListener("click", () => {
 });
 
 document.getElementById("adminTrigger").addEventListener("click", openAdmin);
+let footerLogoClicks = 0;
+let footerLogoTimer;
+document.getElementById("footerAdminHotspot").addEventListener("click", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  footerLogoClicks += 1;
+  clearTimeout(footerLogoTimer);
+  footerLogoTimer = setTimeout(() => {
+    footerLogoClicks = 0;
+  }, 1400);
+  if (footerLogoClicks >= 3) {
+    footerLogoClicks = 0;
+    window.location.href = "/admin.html";
+  }
+});
 window.addEventListener("hashchange", () => {
   if (window.location.hash === "#admin") openAdmin();
 });

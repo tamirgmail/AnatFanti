@@ -7,37 +7,71 @@
       name="description"
       content="Professional speaker, researcher, and wellbeing expert available for interviews, lectures, and conferences."
     />
-    <title>Anat Fanti | Wellbeing Researcher & Speaker</title>
+    <title>Anat Fanti</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260529-18" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-admin-edit="nav">
       <a class="brand" href="#top" aria-label="Home">
-        <span data-field="name">Anat Fanti</span>
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 64 64" focusable="false">
+            <circle class="logo-arc logo-arc-blue" cx="32" cy="32" r="24"></circle>
+            <circle class="logo-arc logo-arc-teal" cx="32" cy="32" r="24"></circle>
+            <circle class="logo-arc logo-arc-navy" cx="32" cy="32" r="17"></circle>
+            <circle class="logo-ring" cx="32" cy="32" r="9"></circle>
+            <circle class="logo-center" cx="32" cy="32" r="4.5"></circle>
+            <circle class="logo-dot logo-dot-one" cx="18" cy="20" r="2.2"></circle>
+            <circle class="logo-dot logo-dot-two" cx="47" cy="18" r="2.2"></circle>
+            <circle class="logo-dot logo-dot-three" cx="15" cy="43" r="2.2"></circle>
+          </svg>
+        </span>
+        <span class="brand-copy">
+          <strong class="brand-title">
+            <span><span class="hi-letter" data-brand-letter="h">H</span><span data-i18n="brand.happinessRest">appiness</span></span>
+            <span><span class="hi-letter" data-brand-letter="i">I</span><span data-i18n="brand.intelligenceRest">ntelligence</span></span>
+          </strong>
+          <small data-i18n="brand.subtitle">with Dr Fanti</small>
+        </span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#work" data-i18n="nav.work">Work</a>
-        <a href="#media" data-i18n="nav.media">Media</a>
-        <a href="#speaking" data-i18n="nav.speaking">Speaking</a>
+        <a href="#work" data-i18n="nav.about">About</a>
+        <a href="#happiness-index" data-i18n="nav.index">Happiness Index</a>
+        <a href="#organizational" data-i18n="nav.organizational">Organizational Wellbeing</a>
+        <a href="#media" data-i18n="nav.media">Lectures & Media</a>
+        <a href="#measurement-lab" data-i18n="nav.lab">Measurement Lab</a>
+        <a href="#programs" data-i18n="nav.programs">Programs</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="header-actions">
-        <button class="flag-button" id="langToggle" type="button" aria-label="Switch to Hebrew">🇮🇱</button>
-        <a class="primary-button compact" href="#contact" data-i18n="nav.book">Book a talk</a>
+        <div class="language-menu" id="languageMenu">
+          <button class="flag-button" id="langToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Choose language"></button>
+          <div class="language-options" id="languageOptions" role="menu" aria-label="Language options">
+            <button type="button" role="menuitem" data-lang-choice="en" aria-label="English"></button>
+            <button type="button" role="menuitem" data-lang-choice="he" aria-label="Hebrew"></button>
+          </div>
+        </div>
+        <a class="primary-button compact" href="#contact" data-i18n="nav.contactCta">Contact</a>
       </div>
     </header>
 
     <main id="main">
       <section class="hero" id="top">
+        <div class="hero-graphics" aria-hidden="true">
+          <span class="shape arc-one"></span>
+          <span class="shape arc-two"></span>
+          <span class="shape red-dot"></span>
+          <span class="shape dot-grid"></span>
+          <span class="shape chart-bars"></span>
+        </div>
         <div class="hero-copy">
-          <p class="eyebrow" data-field="credential">PhD Candidate in Wellbeing & Happiness</p>
           <h1 data-field="heroTitle">Evidence-based ideas for happier, healthier lives.</h1>
           <p class="hero-text" data-field="heroText">
             Anat translates research on wellbeing, resilience, and human flourishing into clear talks,
@@ -49,21 +83,8 @@
           </div>
         </div>
         <figure class="hero-media">
-          <img id="heroImage" src="Media/IMG_0008-Edit-web.jpg" alt="Portrait of Anat Fanti" />
+          <img id="heroImage" src="Media/IMG_0008-Edit-web-transparent.png" alt="Portrait of Anat Fanti" />
         </figure>
-      </section>
-
-      <section class="section template-section" id="templates">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker" data-i18n="templates.kicker">Visual direction</p>
-            <h2 data-i18n="templates.title">Choose a starting mood</h2>
-          </div>
-          <button class="secondary-button" id="openTemplatePicker" type="button" data-i18n="templates.open">
-            Change template
-          </button>
-        </div>
-        <div class="template-grid" id="templateGrid" aria-label="Website color templates"></div>
       </section>
 
       <section class="statement-band" aria-label="Professional focus">
@@ -72,32 +93,58 @@
         </p>
       </section>
 
-      <section class="section split-section" id="work">
-        <div>
-          <p class="section-kicker" data-i18n="work.kicker">Focus</p>
-          <h2 data-field="workTitle">Research with a human voice</h2>
+      <section class="section expertise-section" id="happiness-index">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker" data-i18n="expertise.kicker">Areas of expertise</p>
+            <h2 data-i18n="expertise.title">Research translated into action</h2>
+          </div>
         </div>
-        <div class="text-stack">
-          <p data-field="workBody">
-            Anat works at the intersection of happiness research, positive psychology, and everyday
-            decision-making. Her work helps audiences understand what wellbeing really means and how
-            it can be cultivated in families, workplaces, and communities.
-          </p>
-          <dl class="metrics" aria-label="Highlights">
-            <div>
-              <dt data-field="metricOneValue">25+</dt>
-              <dd data-field="metricOneLabel">Interviews and media features</dd>
-            </div>
-            <div>
-              <dt data-field="metricTwoValue">3</dt>
-              <dd data-field="metricTwoLabel">Signature lecture formats</dd>
-            </div>
-            <div>
-              <dt data-field="metricThreeValue">2</dt>
-              <dd data-field="metricThreeLabel">Languages: English and Hebrew</dd>
-            </div>
-          </dl>
+        <div class="expertise-grid">
+          <a class="expertise-card blue-card" id="measurement-lab" href="#measurement-lab">
+            <span class="expertise-icon">▦</span>
+            <h3 data-i18n="expertise.labTitle">Measurement Lab</h3>
+            <p data-i18n="expertise.labBody">Tools, surveys, and frameworks for understanding wellbeing and progress.</p>
+          </a>
+          <a class="expertise-card cyan-card" href="#media">
+            <span class="expertise-icon">◌</span>
+            <h3 data-i18n="expertise.mediaTitle">Lectures & Media</h3>
+            <p data-i18n="expertise.mediaBody">Clear talks, interviews, and public conversations grounded in research.</p>
+          </a>
+          <a class="expertise-card teal-card" id="organizational" href="#organizational">
+            <span class="expertise-icon">◇</span>
+            <h3 data-i18n="expertise.orgTitle">Organizational Wellbeing</h3>
+            <p data-i18n="expertise.orgBody">Evidence-based ideas for healthier teams, leadership, and culture.</p>
+          </a>
+          <a class="expertise-card target-card" id="programs" href="#happiness-index">
+            <span class="expertise-icon">◉</span>
+            <h3 data-i18n="expertise.indexTitle">Happiness Index</h3>
+            <p data-i18n="expertise.indexBody">Methods and insights for measuring happiness at personal and social levels.</p>
+          </a>
         </div>
+      </section>
+
+      <section class="feature-card-grid" aria-label="Main pages">
+        <a class="feature-card feature-dark" href="#measurement-lab">
+          <h3 data-i18n="expertise.labTitle">Measurement Lab</h3>
+          <p data-i18n="expertise.labBody">Tools, surveys, and frameworks for understanding wellbeing and progress.</p>
+          <span data-i18n="feature.more">Learn more</span>
+        </a>
+        <a class="feature-card feature-cyan" href="#media">
+          <h3 data-i18n="expertise.mediaTitle">Lectures & Media</h3>
+          <p data-i18n="expertise.mediaBody">Clear talks, interviews, and public conversations grounded in research.</p>
+          <span data-i18n="feature.more">Learn more</span>
+        </a>
+        <a class="feature-card feature-teal" href="#organizational">
+          <h3 data-i18n="expertise.orgTitle">Organizational Wellbeing</h3>
+          <p data-i18n="expertise.orgBody">Evidence-based ideas for healthier teams, leadership, and culture.</p>
+          <span data-i18n="feature.more">Learn more</span>
+        </a>
+        <a class="feature-card feature-blue" href="#happiness-index">
+          <h3 data-i18n="expertise.indexTitle">Happiness Index</h3>
+          <p data-i18n="expertise.indexBody">Methods and insights for measuring happiness at personal and social levels.</p>
+          <span data-i18n="feature.more">Learn more</span>
+        </a>
       </section>
 
       <section class="section" id="media">
@@ -160,8 +207,18 @@
 
     <footer class="site-footer">
       <p><span data-field="name">Anat Fanti</span> <span id="year"></span></p>
+      <a class="powered-by" href="https://incredibell.com" target="_blank" rel="noreferrer" aria-label="Powered by incredibell.com">
+        <span class="powered-logo" id="footerAdminHotspot" aria-hidden="true" title="Powered by incredibell.com">
+          <span></span>
+        </span>
+        <span>Powered by <strong>incredibell.com</strong></span>
+      </a>
       <button class="stealth-admin" id="adminTrigger" type="button" aria-label="Open editor"></button>
     </footer>
+
+    <button class="theme-fab" id="openTemplatePicker" type="button" aria-label="Change color template" title="Change color template">
+      <span aria-hidden="true"></span>
+    </button>
 
     <dialog class="admin-dialog" id="adminDialog" aria-labelledby="adminTitle">
       <form method="dialog" class="admin-shell">
@@ -230,6 +287,6 @@
       </div>
     </dialog>
 
-    <script src="app.js" defer></script>
+    <script src="app.js?v=20260529-16" defer></script>
   </body>
 </html>
