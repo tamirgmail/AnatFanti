@@ -266,7 +266,6 @@ function setPath(path, value) {
 function saveAndPreview() {
   syncEditorInputs();
   localStorage.setItem(adminStorageKey, JSON.stringify(content));
-  document.getElementById("sitePreview").src = `/?editor-preview=${Date.now()}`;
 }
 
 function escapeHtml(value) {
@@ -348,7 +347,6 @@ document.getElementById("editorPanel").addEventListener("click", (event) => {
 });
 
 document.getElementById("editorSave").addEventListener("click", saveAndPreview);
-document.getElementById("previewRefresh").addEventListener("click", saveAndPreview);
 document.getElementById("editorExport").addEventListener("click", () => {
   syncEditorInputs();
   const blob = new Blob([JSON.stringify(content, null, 2)], { type: "application/json" });
@@ -370,5 +368,4 @@ document.getElementById("editorReset").addEventListener("click", () => {
   localStorage.removeItem(adminStorageKey);
   content = structuredClone(adminDefaultContent);
   renderEditor();
-  document.getElementById("sitePreview").src = `/?editor-preview=${Date.now()}`;
 });
