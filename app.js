@@ -168,6 +168,7 @@ const defaultContent = {
 
 const translations = {
   en: {
+    "brand.title": "Happiness Intelligence",
     "nav.work": "Work",
     "nav.about": "About",
     "nav.index": "Happiness Index",
@@ -215,6 +216,7 @@ const translations = {
     unsupportedEmbed: "This provider does not expose an inline player for this link yet."
   },
   he: {
+    "brand.title": "אינטיליגמציית האושר",
     "nav.work": "תחום פעילות",
     "nav.about": "אודות",
     "nav.index": "מדדי אושר",
