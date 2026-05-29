@@ -586,7 +586,7 @@ document.getElementById("footerAdminHotspot").addEventListener("click", (event) 
   footerLogoTimer = setTimeout(() => {
     footerLogoClicks = 0;
   }, 1400);
-  if (footerLogoClicks >= 5) {
+  if (footerLogoClicks >= 3) {
     footerLogoClicks = 0;
     openAdmin();
   }
