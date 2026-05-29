@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anat Fanti Editor</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=20260529-6" />
+    <link rel="stylesheet" href="admin.css?v=20260529-6" />
+  </head>
+  <body class="editor-body">
+    <main class="editor-app">
+      <section class="editor-login" id="editorLogin">
+        <div class="editor-login-card">
+          <span class="brand-symbol" aria-hidden="true"><span></span></span>
+          <h1>Site editor</h1>
+          <p>Edit pages, text, articles, videos, talks, and design. Changes are previewed before saving.</p>
+          <label>
+            <span>Email</span>
+            <input id="editorEmail" type="email" autocomplete="username" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input id="editorPassword" type="password" autocomplete="current-password" />
+          </label>
+          <button class="primary-button full" id="editorUnlock" type="button">Open editor</button>
+        </div>
+      </section>
+
+      <section class="editor-shell" id="editorShell" hidden>
+        <aside class="editor-sidebar">
+          <a class="editor-back" href="/">View site</a>
+          <div class="editor-brand">
+            <span class="brand-symbol" aria-hidden="true"><span></span></span>
+            <div>
+              <strong>Content editor</strong>
+              <small>Anat Fanti</small>
+            </div>
+          </div>
+          <nav class="editor-tabs" aria-label="Editor sections">
+            <button class="active" type="button" data-editor-tab="pages">Pages</button>
+            <button type="button" data-editor-tab="text">Text</button>
+            <button type="button" data-editor-tab="media">Articles & videos</button>
+            <button type="button" data-editor-tab="talks">Talks</button>
+            <button type="button" data-editor-tab="design">Design</button>
+          </nav>
+          <div class="editor-actions">
+            <button class="primary-button full" id="editorSave" type="button">Save & refresh preview</button>
+            <button class="secondary-button full" id="editorExport" type="button">Export JSON</button>
+            <label class="file-button full">
+              Import JSON
+              <input id="editorImport" type="file" accept="application/json" />
+            </label>
+            <button class="danger-button full" id="editorReset" type="button">Reset edits</button>
+          </div>
+        </aside>
+
+        <section class="editor-main">
+          <header class="editor-topbar">
+            <div>
+              <p class="section-kicker">Editing</p>
+              <h2 id="editorTitle">Pages</h2>
+            </div>
+            <div class="editor-language">
+              <button class="filter-button active" type="button" data-editor-lang="en">🇺🇸 English</button>
+              <button class="filter-button" type="button" data-editor-lang="he">🇮🇱 Hebrew</button>
+            </div>
+          </header>
+
+          <div class="editor-workspace">
+            <section class="editor-panel" id="editorPanel"></section>
+            <section class="editor-preview">
+              <div class="preview-toolbar">
+                <strong>Preview</strong>
+                <button class="secondary-button compact" id="previewRefresh" type="button">Refresh</button>
+              </div>
+              <iframe id="sitePreview" src="/?editor-preview=1" title="Website preview"></iframe>
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script src="admin.js?v=20260529-6" defer></script>
+  </body>
+</html>

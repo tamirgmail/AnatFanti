@@ -609,7 +609,7 @@ document.getElementById("footerAdminHotspot").addEventListener("click", (event) 
   }, 1400);
   if (footerLogoClicks >= 3) {
     footerLogoClicks = 0;
-    openAdmin();
+    window.location.href = "/admin.html";
   }
 });
 window.addEventListener("hashchange", () => {
