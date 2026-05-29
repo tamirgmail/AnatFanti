@@ -11,7 +11,7 @@ const adminDefaultContent = {
   en: {
     name: "Anat Fanti",
     credential: "PhD Candidate in Wellbeing & Happiness",
-    heroTitle: "Advancing national happiness, national wellbeing, and flourishing societies.",
+    heroTitle: "Advancing national happiness, organizational wellbeing, and flourishing societies.",
     heroText:
       "Anat translates research on wellbeing, resilience, and human flourishing into clear talks, interviews, and practical tools for organizations, conferences, and public audiences.",
     statement: "Bridging academic research, public conversation, and practical wellbeing strategy.",
@@ -43,7 +43,7 @@ const adminDefaultContent = {
   he: {
     name: "ענת פנטי",
     credential: "דוקטורנטית בתחום רווחה נפשית ואושר",
-    heroTitle: "מקדמים אושר לאומי, רווחה לאומית, וחברות משגשגות.",
+    heroTitle: "מקדמים אושר לאומי, רווחה ארגונית, וחברות משגשגות.",
     heroText: "ענת מתרגמת מחקר על רווחה נפשית, חוסן ושגשוג אנושי להרצאות, ראיונות וכלים פרקטיים לארגונים, כנסים וקהל רחב.",
     statement: "חיבור בין מחקר אקדמי, שיחה ציבורית ואסטרטגיות מעשיות לרווחה נפשית.",
     workTitle: "מחקר עם קול אנושי",

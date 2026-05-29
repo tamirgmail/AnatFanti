@@ -5,9 +5,9 @@ const defaultContent = {
   en: {
     name: "Anat Fanti",
     credential: "PhD Candidate in Wellbeing & Happiness",
-    heroTitle: "Advancing national happiness, national wellbeing, and flourishing societies.",
+    heroTitle: "Advancing national happiness, organizational wellbeing, and flourishing societies.",
     heroText:
-      "Anat translates research on wellbeing, resilience, and human flourishing into clear talks, interviews, and practical tools for organizations, conferences, and public audiences.",
+      "Research-based insights for advancing national happiness, organizational wellbeing, and flourishing societies.",
     statement: "Bridging academic research, public conversation, and practical wellbeing strategy.",
     workTitle: "Research with a human voice",
     workBody:
@@ -86,9 +86,9 @@ const defaultContent = {
   he: {
     name: "ענת פנטי",
     credential: "דוקטורנטית בתחום רווחה נפשית ואושר",
-    heroTitle: "מקדמים אושר לאומי, רווחה לאומית, וחברות משגשגות.",
+    heroTitle: "מקדמים אושר לאומי, רווחה ארגונית, וחברות משגשגות.",
     heroText:
-      "ענת מתרגמת מחקר על רווחה נפשית, חוסן ושגשוג אנושי להרצאות, ראיונות וכלים פרקטיים לארגונים, כנסים וקהל רחב.",
+      "תובנות מבוססות מחקר לקידום אושר לאומי, רווחה ארגונית וחברות משגשגות.",
     statement: "חיבור בין מחקר אקדמי, שיחה ציבורית ואסטרטגיות מעשיות לרווחה נפשית.",
     workTitle: "מחקר עם קול אנושי",
     workBody:
@@ -183,8 +183,8 @@ const translations = {
     "nav.contact": "Contact",
     "nav.book": "Book a talk",
     "nav.contactCta": "Contact",
-    "hero.primaryCta": "Invite Anat to speak",
-    "hero.secondaryCta": "Explore media",
+    "hero.primaryCta": "Invite Dr Fanti to speak",
+    "hero.secondaryCta": "Media inquiry",
     "work.kicker": "Focus",
     "media.kicker": "Selected media",
     "speaking.kicker": "Lectures & conferences",
@@ -235,8 +235,8 @@ const translations = {
     "nav.contact": "יצירת קשר",
     "nav.book": "הזמנת הרצאה",
     "nav.contactCta": "יצירת קשר",
-    "hero.primaryCta": "הזמינו את ענת להרצות",
-    "hero.secondaryCta": "צפו במדיה",
+    "hero.primaryCta": "הזמינו את ד״ר פנטי להרצאה",
+    "hero.secondaryCta": "פנייה למדיה",
     "work.kicker": "מיקוד",
     "media.kicker": "מדיה נבחרת",
     "speaking.kicker": "הרצאות וכנסים",
