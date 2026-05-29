@@ -351,7 +351,10 @@ function render() {
   });
   const langToggle = document.getElementById("langToggle");
   langToggle.textContent = currentLang === "en" ? "🇺🇸" : "🇮🇱";
-  langToggle.setAttribute("aria-label", currentLang === "en" ? "English selected. Switch to Hebrew" : "Hebrew selected. Switch to English");
+  langToggle.setAttribute("aria-label", currentLang === "en" ? "English selected. Choose language" : "Hebrew selected. Choose language");
+  document.querySelectorAll("[data-lang-choice]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.langChoice === currentLang);
+  });
   document.getElementById("heroImage").src = content.heroImage;
   document.getElementById("emailLink").href = `mailto:${content.email}`;
   document.getElementById("emailLink").textContent = content.email;
@@ -533,9 +536,25 @@ function escapeAttribute(value) {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 document.getElementById("langToggle").addEventListener("click", () => {
-  currentLang = currentLang === "en" ? "he" : "en";
-  localStorage.setItem("anat-fanti-language", currentLang);
-  render();
+  const menu = document.getElementById("languageMenu");
+  const isOpen = menu.classList.toggle("open");
+  document.getElementById("langToggle").setAttribute("aria-expanded", String(isOpen));
+});
+
+document.querySelectorAll("[data-lang-choice]").forEach((button) => {
+  button.addEventListener("click", () => {
+    currentLang = button.dataset.langChoice;
+    localStorage.setItem("anat-fanti-language", currentLang);
+    document.getElementById("languageMenu").classList.remove("open");
+    document.getElementById("langToggle").setAttribute("aria-expanded", "false");
+    render();
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest("#languageMenu")) return;
+  document.getElementById("languageMenu").classList.remove("open");
+  document.getElementById("langToggle").setAttribute("aria-expanded", "false");
 });
 
 document.body.addEventListener("click", (event) => {

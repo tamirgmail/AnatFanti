@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260529-2" />
+    <link rel="stylesheet" href="styles.css?v=20260529-3" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -33,7 +33,15 @@
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="header-actions">
-        <button class="flag-button" id="langToggle" type="button" aria-label="Switch to Hebrew">🇮🇱</button>
+        <div class="language-menu" id="languageMenu">
+          <button class="flag-button" id="langToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Choose language">
+            🇺🇸
+          </button>
+          <div class="language-options" id="languageOptions" role="menu" aria-label="Language options">
+            <button type="button" role="menuitem" data-lang-choice="en" aria-label="English">🇺🇸</button>
+            <button type="button" role="menuitem" data-lang-choice="he" aria-label="Hebrew">🇮🇱</button>
+          </div>
+        </div>
         <a class="primary-button compact" href="#contact" data-i18n="nav.contactCta">Contact</a>
       </div>
     </header>
@@ -261,6 +269,6 @@
       </div>
     </dialog>
 
-    <script src="app.js?v=20260529-2" defer></script>
+    <script src="app.js?v=20260529-3" defer></script>
   </body>
 </html>
