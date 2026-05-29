@@ -204,6 +204,10 @@ body[dir="rtl"] .header-actions {
   white-space: nowrap;
 }
 
+.brand-title > span {
+  white-space: nowrap;
+}
+
 .hi-letter {
   color: #0067d8;
   display: inline-block;
@@ -695,40 +699,6 @@ body[dir="rtl"] .expertise-card::after {
   z-index: 1;
 }
 
-.page-link-grid {
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 0.85rem;
-}
-
-.page-link-grid a {
-  align-items: center;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--ink);
-  display: flex;
-  gap: 0.65rem;
-  min-height: 4.4rem;
-  padding: 0.8rem;
-  text-decoration: none;
-}
-
-.page-link-grid a:hover {
-  border-color: #0067d8;
-}
-
-.page-link-grid span {
-  color: #f04b37;
-  font-size: 1.5rem;
-}
-
-.page-link-grid strong {
-  font-size: 0.92rem;
-  line-height: 1.18;
-}
-
 .split-section,
 .contact-section {
   display: grid;
@@ -1131,7 +1101,6 @@ textarea {
   .media-grid,
   .talk-list,
   .expertise-grid,
-  .page-link-grid,
   .template-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1150,7 +1119,6 @@ textarea {
   .media-grid,
   .talk-list,
   .expertise-grid,
-  .page-link-grid,
   .template-grid,
   .admin-grid {
     grid-template-columns: 1fr;
