@@ -2,6 +2,10 @@
   background: #eef5f7;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .editor-app {
   min-height: 100vh;
 }
