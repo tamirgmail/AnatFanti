@@ -676,7 +676,8 @@ body[dir="rtl"] .hero-media {
   background: var(--white);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(19, 34, 58, 0.08);
-  margin: 1rem 0 0;
+  /* Pull the panel up so it slightly overlaps the bottom of the hero. */
+  margin: clamp(-3rem, -3vw, -1.75rem) 0 0;
   padding: clamp(1.2rem, 3vw, 2rem);
   position: relative;
   z-index: 2;
