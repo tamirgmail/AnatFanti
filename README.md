@@ -19,3 +19,11 @@ The editor saves changes to the current browser with `localStorage`. Use **Expor
 ## Deploy to Vercel
 
 Deploy this folder as a static site. No build command is required.
+
+Recommended environments:
+
+- `main` branch: live production site, for example `something.com` or `www.something.com`.
+- `staging` branch: staging site, for example `staging.something.com`.
+
+In Vercel, import the GitHub repo, set `main` as the production branch, then add
+`staging.something.com` as a custom domain assigned to the `staging` branch.
