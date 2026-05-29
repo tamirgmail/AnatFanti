@@ -349,7 +349,7 @@ function render() {
   document.documentElement.lang = currentLang;
   document.body.dir = currentLang === "he" ? "rtl" : "ltr";
   document.body.dataset.theme = content.theme || "scholar";
-  document.title = "Anat Fanti";
+  document.title = window.location.hostname.includes("staging") ? "Staging | Anat Fanti" : "Anat Fanti";
   document.querySelectorAll("[data-field]").forEach((element) => {
     const key = element.dataset.field;
     if (data[key]) element.textContent = data[key];

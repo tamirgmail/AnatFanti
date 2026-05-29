@@ -72,6 +72,8 @@ const adminDefaultContent = {
 let content = loadAdminContent();
 let editorLang = "en";
 let editorTab = "pages";
+let selectedMediaIndex = null;
+let selectedTalkIndex = null;
 
 function loadAdminContent() {
   const saved = localStorage.getItem(adminStorageKey);
@@ -156,35 +158,85 @@ function renderTextPanel() {
 }
 
 function renderMediaPanel() {
+  const selectedItem =
+    selectedMediaIndex === null ? null : content[editorLang].media[selectedMediaIndex];
   return `
     <section class="editor-section">
-      <h3>Media list</h3>
-      ${content[editorLang].media.map((item, index) => `
-        <div class="editor-repeat" data-media-index="${index}">
-          ${field("Type: video / article / talk / interview", `media.${index}.type`, item.type)}
-          ${field("Title", `media.${index}.title`, item.title)}
-          ${field("Source", `media.${index}.source`, item.source)}
-          ${field("Description", `media.${index}.description`, item.description, true)}
-          ${field("Link", `media.${index}.url`, item.url)}
-          ${field("Embed URL for non-YouTube", `media.${index}.embedUrl`, item.embedUrl || "")}
-          <button class="danger-button" type="button" data-remove-media="${index}">Remove</button>
-        </div>`).join("")}
-      <button class="secondary-button" type="button" id="editorAddMedia">Add article/video</button>
+      <div class="editor-section-header">
+        <div>
+          <h3>Articles & videos</h3>
+          <p>Click edit to change an item, or use plus to add a new article/video.</p>
+        </div>
+        <button class="editor-plus" type="button" id="editorAddMedia" aria-label="Add article or video">+</button>
+      </div>
+      <div class="editor-card-grid">
+        ${content[editorLang].media.map((item, index) => editorItemCard(item, index, "media", selectedMediaIndex === index)).join("")}
+      </div>
+      ${
+        selectedItem
+          ? `<div class="editor-detail">
+              <div class="editor-section-header">
+                <h3>Edit selected item</h3>
+                <button class="secondary-button compact" type="button" data-close-editor-detail>Close</button>
+              </div>
+              ${field("Type: video / article / talk / interview", `media.${selectedMediaIndex}.type`, selectedItem.type)}
+              ${field("Title", `media.${selectedMediaIndex}.title`, selectedItem.title)}
+              ${field("Source", `media.${selectedMediaIndex}.source`, selectedItem.source)}
+              ${field("Description", `media.${selectedMediaIndex}.description`, selectedItem.description, true)}
+              ${field("Link", `media.${selectedMediaIndex}.url`, selectedItem.url)}
+              ${field("Embed URL for non-YouTube", `media.${selectedMediaIndex}.embedUrl`, selectedItem.embedUrl || "")}
+            </div>`
+          : ""
+      }
     </section>`;
 }
 
 function renderTalksPanel() {
+  const selectedItem =
+    selectedTalkIndex === null ? null : content[editorLang].talks[selectedTalkIndex];
   return `
     <section class="editor-section">
-      <h3>Talk formats</h3>
-      ${content[editorLang].talks.map((item, index) => `
-        <div class="editor-repeat" data-talk-index="${index}">
-          ${field("Title", `talks.${index}.title`, item.title)}
-          ${field("Description", `talks.${index}.description`, item.description, true)}
-          <button class="danger-button" type="button" data-remove-talk="${index}">Remove</button>
-        </div>`).join("")}
-      <button class="secondary-button" type="button" id="editorAddTalk">Add talk</button>
+      <div class="editor-section-header">
+        <div>
+          <h3>Talk formats</h3>
+          <p>Manage lecture formats as cards, then edit the selected talk below.</p>
+        </div>
+        <button class="editor-plus" type="button" id="editorAddTalk" aria-label="Add talk">+</button>
+      </div>
+      <div class="editor-card-grid">
+        ${content[editorLang].talks.map((item, index) => editorItemCard(item, index, "talk", selectedTalkIndex === index)).join("")}
+      </div>
+      ${
+        selectedItem
+          ? `<div class="editor-detail">
+              <div class="editor-section-header">
+                <h3>Edit selected talk</h3>
+                <button class="secondary-button compact" type="button" data-close-editor-detail>Close</button>
+              </div>
+              ${field("Title", `talks.${selectedTalkIndex}.title`, selectedItem.title)}
+              ${field("Description", `talks.${selectedTalkIndex}.description`, selectedItem.description, true)}
+            </div>`
+          : ""
+      }
     </section>`;
+}
+
+function editorItemCard(item, index, kind, active) {
+  const type = kind === "media" ? item.type || "item" : "talk";
+  const editAttr = kind === "media" ? `data-edit-media="${index}"` : `data-edit-talk="${index}"`;
+  const removeAttr = kind === "media" ? `data-remove-media="${index}"` : `data-remove-talk="${index}"`;
+  return `
+    <article class="editor-item-card ${active ? "active" : ""}">
+      <div>
+        <span class="editor-item-type">${escapeHtml(type)}</span>
+        <h4>${escapeHtml(item.title || "Untitled")}</h4>
+        <p>${escapeHtml(item.description || item.source || "")}</p>
+      </div>
+      <div class="editor-card-actions">
+        <button type="button" ${editAttr} aria-label="Edit ${escapeAttribute(item.title || "item")}">✎</button>
+        <button type="button" ${removeAttr} aria-label="Delete ${escapeAttribute(item.title || "item")}">×</button>
+      </div>
+    </article>`;
 }
 
 function renderDesignPanel() {
@@ -238,6 +290,8 @@ document.querySelectorAll("[data-editor-tab]").forEach((button) => {
   button.addEventListener("click", () => {
     syncEditorInputs();
     editorTab = button.dataset.editorTab;
+    selectedMediaIndex = null;
+    selectedTalkIndex = null;
     renderEditor();
   });
 });
@@ -254,21 +308,41 @@ document.getElementById("editorPanel").addEventListener("click", (event) => {
   if (event.target.id === "editorAddMedia") {
     syncEditorInputs();
     content[editorLang].media.push({ type: "video", title: "New item", source: "Source", description: "Description", url: "#", embedUrl: "" });
+    selectedMediaIndex = content[editorLang].media.length - 1;
     renderEditor();
   }
   if (event.target.id === "editorAddTalk") {
     syncEditorInputs();
     content[editorLang].talks.push({ title: "New talk", description: "Description" });
+    selectedTalkIndex = content[editorLang].talks.length - 1;
+    renderEditor();
+  }
+  if (event.target.dataset.editMedia !== undefined) {
+    syncEditorInputs();
+    selectedMediaIndex = Number(event.target.dataset.editMedia);
+    renderEditor();
+  }
+  if (event.target.dataset.editTalk !== undefined) {
+    syncEditorInputs();
+    selectedTalkIndex = Number(event.target.dataset.editTalk);
+    renderEditor();
+  }
+  if (event.target.dataset.closeEditorDetail !== undefined) {
+    syncEditorInputs();
+    selectedMediaIndex = null;
+    selectedTalkIndex = null;
     renderEditor();
   }
   if (event.target.dataset.removeMedia !== undefined) {
     syncEditorInputs();
     content[editorLang].media.splice(Number(event.target.dataset.removeMedia), 1);
+    selectedMediaIndex = null;
     renderEditor();
   }
   if (event.target.dataset.removeTalk !== undefined) {
     syncEditorInputs();
     content[editorLang].talks.splice(Number(event.target.dataset.removeTalk), 1);
+    selectedTalkIndex = null;
     renderEditor();
   }
 });
