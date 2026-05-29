@@ -169,7 +169,12 @@ const defaultContent = {
 const translations = {
   en: {
     "nav.work": "Work",
-    "nav.media": "Media",
+    "nav.about": "About",
+    "nav.index": "Happiness Index",
+    "nav.organizational": "Organizational Wellbeing",
+    "nav.media": "Lectures & Media",
+    "nav.lab": "Measurement Lab",
+    "nav.programs": "Programs",
     "nav.speaking": "Speaking",
     "nav.contact": "Contact",
     "nav.book": "Book a talk",
@@ -196,12 +201,27 @@ const translations = {
     "templates.modalTitle": "Pick a first look",
     "templates.modalBody": "This can be changed later from the site. It only sets the starting palette and tone.",
     "templates.skip": "Keep current look",
+    "expertise.kicker": "Areas of expertise",
+    "expertise.title": "Research translated into action",
+    "expertise.labTitle": "Measurement Lab",
+    "expertise.labBody": "Tools, surveys, and frameworks for understanding wellbeing and progress.",
+    "expertise.mediaTitle": "Lectures & Media",
+    "expertise.mediaBody": "Clear talks, interviews, and public conversations grounded in research.",
+    "expertise.orgTitle": "Organizational Wellbeing",
+    "expertise.orgBody": "Evidence-based ideas for healthier teams, leadership, and culture.",
+    "expertise.indexTitle": "Happiness Index",
+    "expertise.indexBody": "Methods and insights for measuring happiness at personal and social levels.",
     readMore: "Open link",
     unsupportedEmbed: "This provider does not expose an inline player for this link yet."
   },
   he: {
     "nav.work": "תחום פעילות",
-    "nav.media": "מדיה",
+    "nav.about": "אודות",
+    "nav.index": "מדדי אושר",
+    "nav.organizational": "רווחה ארגונית",
+    "nav.media": "הרצאות ומדיה",
+    "nav.lab": "מעבדת המדידה",
+    "nav.programs": "תוכניות",
     "nav.speaking": "הרצאות",
     "nav.contact": "יצירת קשר",
     "nav.book": "הזמנת הרצאה",
@@ -228,6 +248,16 @@ const translations = {
     "templates.modalTitle": "בחרו מראה ראשוני",
     "templates.modalBody": "אפשר לשנות את זה בהמשך מתוך האתר. הבחירה קובעת רק צבעוניות ואופי ראשוני.",
     "templates.skip": "להשאיר את המראה הנוכחי",
+    "expertise.kicker": "תחומי התמחות",
+    "expertise.title": "מחקר שמתורגם לפעולה",
+    "expertise.labTitle": "מעבדת המדידה",
+    "expertise.labBody": "כלים, סקרים ומסגרות להבנת רווחה נפשית והתקדמות.",
+    "expertise.mediaTitle": "הרצאות ומדיה",
+    "expertise.mediaBody": "הרצאות, ראיונות ושיחות ציבוריות ברורות ומבוססות מחקר.",
+    "expertise.orgTitle": "רווחה ארגונית",
+    "expertise.orgBody": "רעיונות מבוססי ראיות לצוותים, מנהיגות ותרבות בריאים יותר.",
+    "expertise.indexTitle": "מדדי אושר",
+    "expertise.indexBody": "שיטות ותובנות למדידת אושר ברמה אישית וחברתית.",
     readMore: "פתיחת קישור",
     unsupportedEmbed: "הספק הזה עדיין לא מאפשר נגן פנימי לקישור הזה."
   }
@@ -236,9 +266,9 @@ const translations = {
 const themes = [
   {
     id: "scholar",
-    title: "Calm Scholar",
-    description: "Soft academic, warm, and credible.",
-    colors: ["#1f2524", "#48675c", "#b96355", "#fbfaf6"]
+    title: "Blue Insight",
+    description: "Clean blue, teal, and red accents from the reference.",
+    colors: ["#13223a", "#0067d8", "#00a99d", "#f04b37"]
   },
   {
     id: "editorial",
@@ -311,7 +341,7 @@ function render() {
   document.documentElement.lang = currentLang;
   document.body.dir = currentLang === "he" ? "rtl" : "ltr";
   document.body.dataset.theme = content.theme || "scholar";
-  document.title = `${data.name} | Wellbeing Researcher & Speaker`;
+  document.title = "Anat Fanti";
   document.querySelectorAll("[data-field]").forEach((element) => {
     const key = element.dataset.field;
     if (data[key]) element.textContent = data[key];

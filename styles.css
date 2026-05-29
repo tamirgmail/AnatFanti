@@ -14,15 +14,15 @@
 }
 
 body[data-theme="scholar"] {
-  --ink: #1f2524;
-  --muted: #66706d;
-  --paper: #fbfaf6;
-  --soft: #edf1ec;
-  --sage: #8aa095;
-  --sage-dark: #48675c;
-  --coral: #b96355;
-  --gold: #b99b5f;
-  --line: #d9ded5;
+  --ink: #13223a;
+  --muted: #5f7084;
+  --paper: #f7fbf8;
+  --soft: #eaf5f1;
+  --sage: #00a99d;
+  --sage-dark: #0067d8;
+  --coral: #f04b37;
+  --gold: #27c8df;
+  --line: #d7e8e4;
 }
 
 body[data-theme="editorial"] {
@@ -135,15 +135,16 @@ textarea {
 
 .nav-links {
   display: flex;
-  gap: clamp(0.8rem, 2vw, 1.6rem);
+  gap: clamp(0.6rem, 1.4vw, 1.2rem);
   justify-content: center;
 }
 
 .nav-links a {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.86rem;
   font-weight: 600;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -192,7 +193,7 @@ textarea {
 }
 
 .primary-button {
-  background: var(--sage-dark);
+  background: linear-gradient(135deg, #0072e5, #0058c9);
   color: var(--white);
 }
 
@@ -308,7 +309,7 @@ h3 {
 }
 
 .statement-band {
-  background: var(--ink);
+  background: linear-gradient(135deg, #10203a, #004ea8 58%, #009d9b);
   color: var(--paper);
   padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 5rem);
 }
@@ -370,6 +371,81 @@ h3 {
 
 .section {
   padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 5vw, 5rem);
+}
+
+.expertise-section {
+  background: var(--white);
+}
+
+.expertise-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.expertise-card {
+  border-radius: 8px;
+  color: var(--white);
+  min-height: 12rem;
+  overflow: hidden;
+  padding: 1.2rem;
+  position: relative;
+}
+
+.expertise-card::after {
+  border: 18px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  content: "";
+  height: 7rem;
+  position: absolute;
+  right: -2rem;
+  top: -2rem;
+  width: 7rem;
+}
+
+body[dir="rtl"] .expertise-card::after {
+  left: -2rem;
+  right: auto;
+}
+
+.blue-card {
+  background: linear-gradient(135deg, #10203a, #0067d8);
+}
+
+.cyan-card {
+  background: linear-gradient(135deg, #0072e5, #27c8df);
+}
+
+.teal-card {
+  background: linear-gradient(135deg, #008f85, #00a99d);
+}
+
+.target-card {
+  background: linear-gradient(135deg, #0067d8, #00479c);
+}
+
+.expertise-icon {
+  color: #f04b37;
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.expertise-card h3 {
+  font-family: Inter, Assistant, system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+.expertise-card p {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.92rem;
+  margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .split-section,
@@ -713,6 +789,7 @@ textarea {
 
   .media-grid,
   .talk-list,
+  .expertise-grid,
   .template-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -730,6 +807,7 @@ textarea {
   .metrics,
   .media-grid,
   .talk-list,
+  .expertise-grid,
   .template-grid,
   .admin-grid {
     grid-template-columns: 1fr;
