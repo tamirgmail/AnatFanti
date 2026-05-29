@@ -215,6 +215,7 @@ const translations = {
     "expertise.orgBody": "Evidence-based ideas for healthier teams, leadership, and culture.",
     "expertise.indexTitle": "Happiness Index",
     "expertise.indexBody": "Methods and insights for measuring happiness at personal and social levels.",
+    "feature.more": "Learn more",
     readMore: "Open link",
     unsupportedEmbed: "This provider does not expose an inline player for this link yet."
   },
@@ -266,6 +267,7 @@ const translations = {
     "expertise.orgBody": "רעיונות מבוססי ראיות לצוותים, מנהיגות ותרבות בריאים יותר.",
     "expertise.indexTitle": "מדדי אושר",
     "expertise.indexBody": "שיטות ותובנות למדידת אושר ברמה אישית וחברתית.",
+    "feature.more": "למדו עוד ‹",
     readMore: "פתיחת קישור",
     unsupportedEmbed: "הספק הזה עדיין לא מאפשר נגן פנימי לקישור הזה."
   }
