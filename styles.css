@@ -286,25 +286,83 @@ body[dir="rtl"] .language-options {
   border-radius: 8px;
   color: var(--white);
   display: grid;
-  gap: clamp(1.5rem, 4vw, 4rem);
+  gap: clamp(1rem, 3vw, 3rem);
   grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
   margin: clamp(1rem, 3vw, 2rem) clamp(1rem, 5vw, 5rem) 0;
-  min-height: min(660px, calc(100vh - 112px));
+  min-height: 430px;
   overflow: hidden;
-  padding: clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(1.2rem, 3vw, 2.5rem);
   position: relative;
 }
 
 .hero::after {
   background-image: radial-gradient(rgba(255, 255, 255, 0.28) 1.5px, transparent 1.5px);
   background-size: 14px 14px;
-  content: "";
   height: 8rem;
   content: "";
   left: 36%;
   position: absolute;
   top: 2.2rem;
   width: 8rem;
+}
+
+.hero-graphics {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.shape {
+  position: absolute;
+}
+
+.arc-one {
+  background: rgba(39, 200, 223, 0.38);
+  border-radius: 50%;
+  height: 17rem;
+  left: -5rem;
+  top: -2rem;
+  width: 17rem;
+}
+
+.arc-two {
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+  height: 9rem;
+  left: 5.5rem;
+  top: 4rem;
+  width: 9rem;
+}
+
+.red-dot {
+  background: #f04b37;
+  border-radius: 50%;
+  height: 4.6rem;
+  left: 14rem;
+  top: 4.2rem;
+  width: 4.6rem;
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.32) 2px, transparent 2px);
+  background-size: 15px 15px;
+  height: 7rem;
+  left: 43%;
+  top: 2.2rem;
+  width: 7rem;
+}
+
+.chart-bars {
+  background:
+    linear-gradient(to top, #27c8df 0 48%, transparent 48%) 0 100% / 14px 100% no-repeat,
+    linear-gradient(to top, #ffffff 0 62%, transparent 62%) 24px 100% / 14px 100% no-repeat,
+    linear-gradient(to top, #0067d8 0 78%, transparent 78%) 48px 100% / 14px 100% no-repeat,
+    linear-gradient(to top, #00a99d 0 95%, transparent 95%) 72px 100% / 14px 100% no-repeat;
+  bottom: 1.2rem;
+  height: 8rem;
+  opacity: 0.85;
+  right: 44%;
+  width: 96px;
 }
 
 .hero-copy {
@@ -372,7 +430,7 @@ h3 {
 }
 
 .hero-media img {
-  height: min(62vh, 560px);
+  height: 370px;
   object-fit: contain;
   object-position: center bottom;
   width: 100%;
@@ -463,6 +521,10 @@ body[dir="rtl"] .hero-media {
 
 .expertise-section {
   background: var(--white);
+  margin: -2.2rem clamp(1rem, 5vw, 5rem) 0;
+  padding: 0 1.5rem clamp(2rem, 4vw, 3rem);
+  position: relative;
+  z-index: 2;
 }
 
 .expertise-grid {
@@ -478,6 +540,7 @@ body[dir="rtl"] .hero-media {
   overflow: hidden;
   padding: 1.2rem;
   position: relative;
+  text-decoration: none;
 }
 
 .expertise-card::after {
@@ -914,7 +977,7 @@ textarea {
 
   .hero-media img {
     height: auto;
-    max-height: 560px;
+    max-height: 480px;
   }
 
   .hero-copy,
@@ -923,6 +986,12 @@ textarea {
   body[dir="rtl"] .hero-media {
     grid-column: 1;
     grid-row: auto;
+  }
+
+  .expertise-section {
+    margin-top: 1rem;
+    padding-left: clamp(1rem, 5vw, 5rem);
+    padding-right: clamp(1rem, 5vw, 5rem);
   }
 
   h1 {

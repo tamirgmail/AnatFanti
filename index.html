@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260529-3" />
+    <link rel="stylesheet" href="styles.css?v=20260529-4" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -48,6 +48,13 @@
 
     <main id="main">
       <section class="hero" id="top">
+        <div class="hero-graphics" aria-hidden="true">
+          <span class="shape arc-one"></span>
+          <span class="shape arc-two"></span>
+          <span class="shape red-dot"></span>
+          <span class="shape dot-grid"></span>
+          <span class="shape chart-bars"></span>
+        </div>
         <div class="hero-copy">
           <h1 data-field="heroTitle">Evidence-based ideas for happier, healthier lives.</h1>
           <p class="hero-text" data-field="heroText">
@@ -78,26 +85,26 @@
           </div>
         </div>
         <div class="expertise-grid">
-          <article class="expertise-card blue-card" id="measurement-lab">
+          <a class="expertise-card blue-card" id="measurement-lab" href="#measurement-lab">
             <span class="expertise-icon">▦</span>
             <h3 data-i18n="expertise.labTitle">Measurement Lab</h3>
             <p data-i18n="expertise.labBody">Tools, surveys, and frameworks for understanding wellbeing and progress.</p>
-          </article>
-          <article class="expertise-card cyan-card">
+          </a>
+          <a class="expertise-card cyan-card" href="#media">
             <span class="expertise-icon">◌</span>
             <h3 data-i18n="expertise.mediaTitle">Lectures & Media</h3>
             <p data-i18n="expertise.mediaBody">Clear talks, interviews, and public conversations grounded in research.</p>
-          </article>
-          <article class="expertise-card teal-card" id="organizational">
+          </a>
+          <a class="expertise-card teal-card" id="organizational" href="#organizational">
             <span class="expertise-icon">◇</span>
             <h3 data-i18n="expertise.orgTitle">Organizational Wellbeing</h3>
             <p data-i18n="expertise.orgBody">Evidence-based ideas for healthier teams, leadership, and culture.</p>
-          </article>
-          <article class="expertise-card target-card" id="programs">
+          </a>
+          <a class="expertise-card target-card" id="programs" href="#happiness-index">
             <span class="expertise-icon">◉</span>
             <h3 data-i18n="expertise.indexTitle">Happiness Index</h3>
             <p data-i18n="expertise.indexBody">Methods and insights for measuring happiness at personal and social levels.</p>
-          </article>
+          </a>
         </div>
       </section>
 
@@ -269,6 +276,6 @@
       </div>
     </dialog>
 
-    <script src="app.js?v=20260529-3" defer></script>
+    <script src="app.js?v=20260529-4" defer></script>
   </body>
 </html>
