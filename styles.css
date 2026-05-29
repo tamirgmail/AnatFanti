@@ -231,27 +231,41 @@ textarea {
 }
 
 .hero {
+  background:
+    radial-gradient(circle at 12% 28%, rgba(39, 200, 223, 0.38) 0 13%, transparent 13.4%),
+    radial-gradient(circle at 23% 42%, rgba(255, 255, 255, 0.82) 0 9%, transparent 9.4%),
+    radial-gradient(circle at 31% 31%, rgba(240, 75, 55, 0.95) 0 5.5%, transparent 5.8%),
+    linear-gradient(112deg, #0067d8 0%, #004fae 38%, #13223a 100%);
+  border-radius: 8px;
+  color: var(--white);
   display: grid;
-  gap: clamp(2rem, 5vw, 5rem);
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
-  min-height: calc(100vh - 72px);
-  padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 5rem) 2rem;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
+  margin: clamp(1rem, 3vw, 2rem) clamp(1rem, 5vw, 5rem) 0;
+  min-height: min(660px, calc(100vh - 112px));
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 4rem);
   position: relative;
 }
 
 .hero::after {
-  background: var(--coral);
-  bottom: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.28) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
   content: "";
-  height: 0.45rem;
-  left: clamp(1rem, 5vw, 5rem);
+  height: 8rem;
+  content: "";
+  left: 36%;
   position: absolute;
-  width: min(16rem, 40vw);
+  top: 2.2rem;
+  width: 8rem;
 }
 
 .hero-copy {
   align-self: center;
-  max-width: 760px;
+  justify-self: end;
+  max-width: 680px;
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow,
@@ -273,8 +287,8 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.6rem, 5.8vw, 5.5rem);
-  max-width: 13ch;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  max-width: 12ch;
 }
 
 h2 {
@@ -294,18 +308,45 @@ h3 {
   max-width: 62ch;
 }
 
+.hero .hero-text {
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 44rem;
+}
+
 .hero-media {
   align-self: end;
+  grid-column: 1;
+  grid-row: 1;
   margin: 0;
   min-height: 0;
   overflow: visible;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-media img {
-  height: min(74vh, 760px);
+  height: min(68vh, 620px);
   object-fit: contain;
   object-position: center bottom;
   width: 100%;
+}
+
+.hero-copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+body[dir="rtl"] .hero {
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
+}
+
+body[dir="rtl"] .hero-copy {
+  grid-column: 2;
+  text-align: right;
+}
+
+body[dir="rtl"] .hero-media {
+  grid-column: 1;
 }
 
 .statement-band {
@@ -772,6 +813,7 @@ textarea {
 
   .hero {
     min-height: auto;
+    padding-bottom: 0;
   }
 
   .hero-media {
@@ -781,6 +823,14 @@ textarea {
   .hero-media img {
     height: auto;
     max-height: 680px;
+  }
+
+  .hero-copy,
+  .hero-media,
+  body[dir="rtl"] .hero-copy,
+  body[dir="rtl"] .hero-media {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   h1 {
