@@ -1,6 +1,6 @@
 const defaultContent = {
   email: "anat_fanti@yahoo.com",
-  heroImage: "Media/anat-fanti-hero-transparent.png",
+  heroImage: "Media/IMG_0008-Edit-web-transparent.png",
   theme: "scholar",
   en: {
     name: "Anat Fanti",
@@ -273,6 +273,11 @@ const translations = {
   }
 };
 
+const flagSvgs = {
+  en: '<svg class="flag-svg" viewBox="0 0 24 16" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#b22234"/><g fill="#fff"><rect y="1.23" width="24" height="1.23"/><rect y="3.69" width="24" height="1.23"/><rect y="6.15" width="24" height="1.23"/><rect y="8.62" width="24" height="1.23"/><rect y="11.08" width="24" height="1.23"/><rect y="13.54" width="24" height="1.23"/></g><rect width="10.5" height="8.62" fill="#3c3b6e"/></svg>',
+  he: '<svg class="flag-svg" viewBox="0 0 24 16" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="24" height="16" fill="#fff"/><rect y="2" width="24" height="2.2" fill="#0038b8"/><rect y="11.8" width="24" height="2.2" fill="#0038b8"/><g fill="none" stroke="#0038b8" stroke-width="0.7"><path d="M12 5.2 L14.6 9.7 L9.4 9.7 Z"/><path d="M12 10.8 L9.4 6.3 L14.6 6.3 Z"/></g></svg>'
+};
+
 const themes = [
   {
     id: "scholar",
@@ -360,10 +365,11 @@ function render() {
     element.textContent = translations[currentLang][element.dataset.i18n] || element.textContent;
   });
   const langToggle = document.getElementById("langToggle");
-  langToggle.textContent = currentLang === "en" ? "🇺🇸" : "🇮🇱";
+  langToggle.innerHTML = flagSvgs[currentLang] || flagSvgs.en;
   langToggle.setAttribute("aria-label", currentLang === "en" ? "English selected. Choose language" : "Hebrew selected. Choose language");
   document.querySelector(".brand-title").classList.toggle("hebrew-brand-title", currentLang === "he");
   document.querySelectorAll("[data-lang-choice]").forEach((button) => {
+    button.innerHTML = flagSvgs[button.dataset.langChoice] || button.innerHTML;
     button.classList.toggle("active", button.dataset.langChoice === currentLang);
   });
   document.getElementById("heroImage").src = content.heroImage;

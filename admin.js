@@ -6,7 +6,7 @@ const credentials = {
 
 const adminDefaultContent = {
   email: "anat_fanti@yahoo.com",
-  heroImage: "Media/anat-fanti-hero-transparent.png",
+  heroImage: "Media/IMG_0008-Edit-web-transparent.png",
   theme: "scholar",
   en: {
     name: "Anat Fanti",

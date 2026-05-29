@@ -314,8 +314,15 @@ body[dir="rtl"] .hi-letter[data-brand-letter="i"] {
   font-size: 1.2rem;
   height: 2.6rem;
   min-height: 2.6rem;
+  overflow: hidden;
   padding: 0;
   width: 2.6rem;
+}
+
+.flag-svg {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .language-menu {
@@ -355,6 +362,7 @@ body[dir="rtl"] .language-options {
   font-size: 1.15rem;
   height: 2.25rem;
   justify-content: center;
+  overflow: hidden;
   padding: 0;
   width: 2.25rem;
 }
