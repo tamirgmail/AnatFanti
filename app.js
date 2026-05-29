@@ -169,6 +169,9 @@ const defaultContent = {
 const translations = {
   en: {
     "brand.title": "Happiness Intelligence",
+    "brand.happinessRest": "appiness",
+    "brand.intelligenceRest": "ntelligence",
+    "brand.subtitle": "with Dr Fanti",
     "nav.work": "Work",
     "nav.about": "About",
     "nav.index": "Happiness Index",
@@ -217,6 +220,9 @@ const translations = {
   },
   he: {
     "brand.title": "אינטיליגמציית האושר",
+    "brand.happinessRest": "ינטיליגמציית",
+    "brand.intelligenceRest": "האושר",
+    "brand.subtitle": "עם ד״ר פנטי",
     "nav.work": "תחום פעילות",
     "nav.about": "אודות",
     "nav.index": "מדדי אושר",
@@ -354,6 +360,7 @@ function render() {
   const langToggle = document.getElementById("langToggle");
   langToggle.textContent = currentLang === "en" ? "🇺🇸" : "🇮🇱";
   langToggle.setAttribute("aria-label", currentLang === "en" ? "English selected. Choose language" : "Hebrew selected. Choose language");
+  document.querySelector(".brand-title").classList.toggle("hebrew-brand-title", currentLang === "he");
   document.querySelectorAll("[data-lang-choice]").forEach((button) => {
     button.classList.toggle("active", button.dataset.langChoice === currentLang);
   });

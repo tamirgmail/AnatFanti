@@ -191,7 +191,7 @@ body[dir="rtl"] .header-actions {
 
 .brand-copy {
   display: grid;
-  line-height: 1.08;
+  line-height: 0.92;
 }
 
 .brand-copy strong {
@@ -199,10 +199,34 @@ body[dir="rtl"] .header-actions {
   font-size: 1.02rem;
 }
 
+.brand-title {
+  display: grid;
+  white-space: nowrap;
+}
+
+.hi-letter {
+  color: #0067d8;
+  display: inline-block;
+  font-size: 1.26em;
+  font-weight: 900;
+  min-width: 0.78em;
+}
+
+.hi-letter[data-brand-letter="i"] {
+  color: #00a99d;
+  margin-left: 0;
+}
+
+body[dir="rtl"] .hi-letter[data-brand-letter="i"] {
+  margin-left: 0;
+}
+
 .brand-copy small {
-  color: var(--muted);
-  font-size: 0.76rem;
-  font-weight: 700;
+  color: #f04b37;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 0.18rem;
 }
 
 .nav-links {
