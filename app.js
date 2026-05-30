@@ -20,7 +20,7 @@ const defaultContent = {
     metricThreeLabel: "Languages: English and Hebrew",
     mediaTitle: "Interviews, talks, and articles",
     speakingTitle: "Talks designed for thoughtful audiences",
-    contactTitle: "Book a lecture, interview, or conference appearance.",
+    contactTitle: "Contact",
     contactBody:
       "Share a few details about the event, audience, date, and preferred language. Anat will follow up with availability and the best format for your audience.",
     location: "Based in Israel. Available internationally.",
@@ -101,7 +101,7 @@ const defaultContent = {
     metricThreeLabel: "שפות: עברית ואנגלית",
     mediaTitle: "ראיונות, הרצאות ומאמרים",
     speakingTitle: "הרצאות לקהלים חושבים",
-    contactTitle: "לתיאום הרצאה, ראיון או הופעה בכנס.",
+    contactTitle: "יצירת קשר",
     contactBody:
       "ספרו כמה פרטים על האירוע, הקהל, התאריך והשפה המועדפת. ענת תחזור עם זמינות והפורמט המתאים ביותר לקהל שלכם.",
     location: "מבוססת בישראל. זמינה גם לאירועים בינלאומיים.",
@@ -216,6 +216,11 @@ const translations = {
     "expertise.indexTitle": "Happiness Index",
     "expertise.indexBody": "Methods and insights for measuring happiness at personal and social levels.",
     "feature.more": "Learn more",
+    "expertise.sectionLabel": "Areas of expertise",
+    "newsletter.label": "Insights and updates straight to your inbox",
+    "newsletter.placeholder": "Enter your email address",
+    "newsletter.cta": "Subscribe",
+    "quote.text": "\"Happiness is not just a goal — it is the foundation for building a better future for individuals, organizations, and society as a whole.\"",
     readMore: "Open link",
     unsupportedEmbed: "This provider does not expose an inline player for this link yet."
   },
@@ -268,6 +273,11 @@ const translations = {
     "expertise.indexTitle": "מדדי אושר",
     "expertise.indexBody": "שיטות ותובנות למדידת אושר ברמה אישית וחברתית.",
     "feature.more": "למדו עוד ‹",
+    "expertise.sectionLabel": "תחומי התמחות",
+    "newsletter.label": "תובנות ועדכונים ישירות למייל",
+    "newsletter.placeholder": "הכניסו את כתובת המייל שלכם",
+    "newsletter.cta": "הרשמה",
+    "quote.text": "\"אושר הוא לא רק יעד — אלא תשתית לבניית עתיד טוב יותר ליחידים, לארגונים, ולחברה כולה.\"",
     readMore: "פתיחת קישור",
     unsupportedEmbed: "הספק הזה עדיין לא מאפשר נגן פנימי לקישור הזה."
   }
@@ -380,6 +390,10 @@ function render() {
   });
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = translations[currentLang][element.dataset.i18n] || element.textContent;
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+    const value = translations[currentLang][element.dataset.i18nPlaceholder];
+    if (value) element.setAttribute("placeholder", value);
   });
   const langToggle = document.getElementById("langToggle");
   langToggle.innerHTML = flagSvgs[currentLang] || flagSvgs.en;
@@ -618,6 +632,17 @@ document.getElementById("bookingForm").addEventListener("submit", (event) => {
   );
   window.location.href = `mailto:${content.email}?subject=${subject}&body=${body}`;
 });
+
+const newsletterForm = document.getElementById("newsletterForm");
+if (newsletterForm) {
+  newsletterForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = new FormData(event.currentTarget).get("email");
+    const subject = encodeURIComponent("Newsletter signup");
+    const body = encodeURIComponent(`Please add this address to the list: ${email}`);
+    window.location.href = `mailto:${content.email}?subject=${subject}&body=${body}`;
+  });
+}
 
 document.getElementById("openTemplatePicker").addEventListener("click", () => {
   document.getElementById("templateDialog").showModal();

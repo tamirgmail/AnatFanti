@@ -423,19 +423,20 @@ body[dir="rtl"] .language-options {
 
 .hero {
   background:
-    radial-gradient(circle at 15% 24%, rgba(31, 169, 164, 0.42) 0 13%, transparent 13.4%),
-    radial-gradient(circle at 24% 39%, rgba(255, 255, 255, 0.82) 0 8%, transparent 8.4%),
-    radial-gradient(circle at 31% 35%, rgba(231, 78, 54, 0.95) 0 4.8%, transparent 5.1%),
-    linear-gradient(112deg, #0d78d8 0%, #0b56b4 38%, #14233f 100%);
+    radial-gradient(circle at 32% 34%, rgba(31, 169, 164, 0.28) 0 8%, transparent 8.4%),
+    radial-gradient(circle at 28% 58%, rgba(231, 78, 54, 0.9) 0 1.4%, transparent 1.8%),
+    linear-gradient(118deg, #0c2350 0%, #0a1a39 100%);
   border-radius: 16px;
   color: var(--white);
+  /* Keep image left / copy right in BOTH languages; copy text re-flips for RTL. */
+  direction: ltr;
   display: grid;
   gap: clamp(1rem, 3vw, 3rem);
   grid-template-columns: minmax(300px, 0.92fr) minmax(0, 1fr);
   margin: 0;
-  min-height: 360px;
+  min-height: 240px;
   overflow: hidden;
-  padding: clamp(1.2rem, 3vw, 2.4rem);
+  padding: clamp(1.4rem, 3vw, 2.6rem);
   position: relative;
 }
 
@@ -540,8 +541,8 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2rem, 3.8vw, 3.8rem);
-  max-width: 14ch;
+  font-size: clamp(1.5rem, 2.5vw, 2.4rem);
+  max-width: 18ch;
 }
 
 h2 {
@@ -583,7 +584,7 @@ h3 {
   display: block;
   /* Cover + top anchor crops the figure higher (head to upper body) so the
      hero stays compact while the portrait still reads large. */
-  height: clamp(360px, 36vw, 520px);
+  height: clamp(220px, 24vw, 340px);
   object-fit: cover;
   object-position: center top;
   width: 100%;
@@ -599,6 +600,7 @@ body[dir="rtl"] .hero {
 }
 
 body[dir="rtl"] .hero-copy {
+  direction: rtl;
   grid-column: 2;
   text-align: right;
 }
@@ -698,7 +700,7 @@ body[dir="rtl"] .hero-media {
   padding: 0;
   position: relative;
   text-decoration: none;
-  text-align: end;
+  text-align: start;
 }
 
 .expertise-card::after {
@@ -736,11 +738,23 @@ body[dir="rtl"] .expertise-card::after {
 }
 
 .expertise-card h3 {
+  align-items: center;
   font-family: Inter, Assistant, system-ui, sans-serif;
   color: #263f73;
+  display: flex;
   font-size: 1rem;
+  gap: 0.4rem;
   line-height: 1.25;
   margin-bottom: 0.6rem;
+}
+
+.expertise-card h3::before {
+  background: #f04b37;
+  border-radius: 50%;
+  content: "";
+  flex: none;
+  height: 0.45rem;
+  width: 0.45rem;
 }
 
 .expertise-card p {
@@ -792,6 +806,7 @@ body[dir="rtl"] .expertise-card::after {
   line-height: 1.25;
   margin: 0;
   position: relative;
+  text-align: start;
   z-index: 1;
 }
 
@@ -802,6 +817,7 @@ body[dir="rtl"] .expertise-card::after {
   margin: 0.45rem 0 0;
   max-width: 14rem;
   position: relative;
+  text-align: start;
   z-index: 1;
 }
 
@@ -811,7 +827,85 @@ body[dir="rtl"] .expertise-card::after {
   font-weight: 800;
   margin-top: 2.6rem;
   position: relative;
+  text-align: start;
   z-index: 1;
+}
+
+/* Hero primary CTA is teal to match the mockup. */
+.hero .primary-button {
+  background: var(--sage);
+  color: var(--white);
+}
+
+/* "Areas of expertise" centred label above the icon row. */
+.expertise-label {
+  color: #13223a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: Inter, Assistant, system-ui, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 0 0 1.6rem;
+  text-align: center;
+}
+
+.expertise-label::before,
+.expertise-label::after {
+  background: var(--sage);
+  border-radius: 50%;
+  content: "";
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+.expertise-label::before {
+  background: #f04b37;
+}
+
+/* Newsletter + quote band (mockup 3). */
+.cta-band {
+  align-items: center;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: 1fr 1fr;
+  margin-top: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1rem, 3vw, 2rem) 0;
+}
+
+.cta-quote {
+  color: #13223a;
+  font-family: Fraunces, Assistant, serif;
+  font-size: clamp(1.15rem, 1.9vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  text-align: center;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.newsletter-label {
+  color: #13223a;
+  font-weight: 700;
+  margin: 0;
+}
+
+.newsletter-field input {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font: inherit;
+  padding: 0.85rem 1rem;
+  width: 100%;
+}
+
+.newsletter .primary-button {
+  background: var(--sage);
 }
 
 .feature-dark {
@@ -1261,6 +1355,7 @@ textarea {
   .talk-list,
   .expertise-grid,
   .feature-card-grid,
+  .cta-band,
   .template-grid,
   .admin-grid {
     grid-template-columns: 1fr;
@@ -1272,7 +1367,7 @@ textarea {
   }
 
   h1 {
-    font-size: clamp(2.45rem, 11vw, 4.2rem);
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
   }
 
   .site-footer {

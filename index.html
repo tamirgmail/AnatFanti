@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260529-19" />
+    <link rel="stylesheet" href="styles.css?v=20260530-21" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -86,27 +86,74 @@
         </figure>
       </section>
 
-      <section class="feature-card-grid" id="happiness-index" aria-label="Areas of expertise">
-        <a class="feature-card feature-blue" id="programs" href="#contact">
+      <section class="section expertise-section" id="happiness-index">
+        <p class="expertise-label" data-i18n="expertise.sectionLabel">Areas of expertise</p>
+        <div class="expertise-grid">
+          <div class="expertise-card" id="programs">
+            <span class="expertise-icon" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 34 34"><rect x="3" y="20" width="5" height="11" fill="#0067d8"/><rect x="11" y="13" width="5" height="18" fill="#00a99d"/><rect x="19" y="7" width="5" height="24" fill="#13223a"/><circle cx="29" cy="6" r="3" fill="#f04b37"/></svg>
+            </span>
+            <h3 data-i18n="expertise.indexTitle">Happiness Index</h3>
+            <p data-i18n="expertise.indexBody">Methods and insights for measuring happiness at personal and social levels.</p>
+          </div>
+          <div class="expertise-card" id="organizational">
+            <span class="expertise-icon" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="11" fill="none" stroke="#d7e8e4" stroke-width="5"/><path d="M17 6 a11 11 0 0 1 9.6 5.6" fill="none" stroke="#00a99d" stroke-width="5" stroke-linecap="round"/></svg>
+            </span>
+            <h3 data-i18n="expertise.orgTitle">Organizational Wellbeing</h3>
+            <p data-i18n="expertise.orgBody">Evidence-based ideas for healthier teams, leadership, and culture.</p>
+          </div>
+          <div class="expertise-card">
+            <span class="expertise-icon" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 34 34"><g fill="#27a3d4"><circle cx="6" cy="6" r="2"/><circle cx="14" cy="6" r="2"/><circle cx="22" cy="6" r="2"/><circle cx="6" cy="14" r="2"/><circle cx="14" cy="14" r="2" fill="#f04b37"/><circle cx="22" cy="14" r="2"/><circle cx="6" cy="22" r="2"/><circle cx="14" cy="22" r="2"/><circle cx="22" cy="22" r="2"/></g></svg>
+            </span>
+            <h3 data-i18n="expertise.mediaTitle">Lectures &amp; Media</h3>
+            <p data-i18n="expertise.mediaBody">Clear talks, interviews, and public conversations grounded in research.</p>
+          </div>
+          <div class="expertise-card">
+            <span class="expertise-icon" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 34 34"><g><rect x="4" y="4" width="7" height="7" rx="1" fill="#13223a"/><rect x="13" y="4" width="7" height="7" rx="1" fill="#0067d8"/><rect x="4" y="13" width="7" height="7" rx="1" fill="#00a99d"/><rect x="13" y="13" width="7" height="7" rx="1" fill="#9fb6cf"/></g></svg>
+            </span>
+            <h3 data-i18n="expertise.labTitle">Measurement Lab</h3>
+            <p data-i18n="expertise.labBody">Tools, surveys, and frameworks for understanding wellbeing and progress.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-card-grid" aria-label="Specialty areas">
+        <a class="feature-card feature-blue" href="#contact">
           <h3 data-i18n="expertise.indexTitle">Happiness Index</h3>
           <p data-i18n="expertise.indexBody">Methods and insights for measuring happiness at personal and social levels.</p>
           <span data-i18n="feature.more">Learn more</span>
         </a>
-        <a class="feature-card feature-teal" id="organizational" href="#contact">
+        <a class="feature-card feature-teal" href="#contact">
           <h3 data-i18n="expertise.orgTitle">Organizational Wellbeing</h3>
           <p data-i18n="expertise.orgBody">Evidence-based ideas for healthier teams, leadership, and culture.</p>
           <span data-i18n="feature.more">Learn more</span>
         </a>
         <a class="feature-card feature-cyan" href="#media">
-          <h3 data-i18n="expertise.mediaTitle">Lectures & Media</h3>
+          <h3 data-i18n="expertise.mediaTitle">Lectures &amp; Media</h3>
           <p data-i18n="expertise.mediaBody">Clear talks, interviews, and public conversations grounded in research.</p>
           <span data-i18n="feature.more">Learn more</span>
         </a>
-        <a class="feature-card feature-dark" id="measurement-lab" href="#contact">
+        <a class="feature-card feature-dark" href="#contact">
           <h3 data-i18n="expertise.labTitle">Measurement Lab</h3>
           <p data-i18n="expertise.labBody">Tools, surveys, and frameworks for understanding wellbeing and progress.</p>
           <span data-i18n="feature.more">Learn more</span>
         </a>
+      </section>
+
+      <section class="cta-band" aria-label="Newsletter and quote">
+        <blockquote class="cta-quote" data-i18n="quote.text">
+          "Happiness is not just a goal — it is the foundation for building a better future for individuals, organizations, and society as a whole."
+        </blockquote>
+        <form class="newsletter" id="newsletterForm">
+          <p class="newsletter-label" data-i18n="newsletter.label">Insights and updates straight to your inbox</p>
+          <span class="newsletter-field">
+            <input type="email" name="email" autocomplete="email" data-i18n-placeholder="newsletter.placeholder" placeholder="Enter your email address" required />
+          </span>
+          <button class="primary-button full" type="submit" data-i18n="newsletter.cta">Subscribe</button>
+        </form>
       </section>
 
       <section class="section" id="media">
@@ -135,7 +182,7 @@
       <section class="section contact-section" id="contact">
         <div>
           <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
-          <h2 data-field="contactTitle">Book a lecture, interview, or conference appearance.</h2>
+          <h2 data-field="contactTitle">Contact</h2>
           <p data-field="contactBody">
             Share a few details about the event, audience, date, and preferred language. Anat will
             follow up with availability and the best format for your audience.
@@ -249,6 +296,6 @@
       </div>
     </dialog>
 
-    <script src="app.js?v=20260529-19" defer></script>
+    <script src="app.js?v=20260530-21" defer></script>
   </body>
 </html>
